@@ -22,22 +22,26 @@ st.write("=" * 33)
 st.sidebar.title("Sample Patients Record ") 
 if st.sidebar.button("!!Click!!"):
 	st.sidebar.dataframe(data) 
-
-g = st.number_input("Enter Glucose label ==>")
-bp = st.number_input("Enter BloodPressure ==>")
-sk = st.number_input("Enter SkinThickness ==>")
-isu = st.number_input("Enter Insulin ==>")
-bmi = st.number_input("Enter BMI ==>")
-dp = st.number_input("Enter DiabetesPedigreeFunction ==>")
-age = st.number_input("Enter age ==>")
+g, bp = st.columns(2) 
+g.number_input("Enter Glucose label ==>")
+bp.number_input("Enter BloodPressure ==>")
+sk, isu = st.columns(2) 
+sk.number_input("Enter SkinThickness ==>")
+isu.number_input("Enter Insulin ==>")
+bmi, dp = st.columns(2) 
+bmi.number_input("Enter BMI ==>")
+dp.number_input("Enter DiabetesPedigreeFunction ==>")
+age, name = st.columns(2) 
+age.number_input("Enter age ==>")
+name.text_input("Enter patient name ==>") 
 
 res = model.predict([[g, bp, sk, isu, bmi, dp, age]])
 t = res[0]
 
 if st.button("Predict Diabetes "):
 	if t == 1:
-		st.write("You have Diabetes") 
+		st.write(f"{name}!You have Diabetes") 
 	else:
-		st.write("No Diabetes") 
+		st.write(f"{name}!No Diabetes") 
 	
 	
