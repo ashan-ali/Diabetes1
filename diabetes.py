@@ -18,7 +18,7 @@ model.fit(x_train, y_train)
 #-------------------------streamlit code----
 st.title("Diabetes Prediction")
 st.image("a-doctor-writing-the-word-diabetes.jpg") 
-st.write("=" * 33)
+st.title("=" * 100)
 
 rad =st.sidebar.radio("Menu",["Sample Patients Records","Making Prediction","About Us"])
 if rad == "Sample Patients Records":
@@ -53,6 +53,9 @@ if rad == "Making Prediction":
 		else:
 			st.write(f"{name}!No Diabetes") 
 if rad == "About Us":
-	st.header("Ashan Ali") 
+	st.title("\t\t\t\tAshan Ali")
+	st.title("\t\t\t\tPGT-AI/CS/IP")
+	st.title("\t\t\t\tNew St. Stephen's Public School,Kalindi Vihar Agra")
+	
 	
 	
