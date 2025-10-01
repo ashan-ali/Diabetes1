@@ -40,8 +40,8 @@ t = res[0]
 
 if st.button("Predict Diabetes "):
 	if t == 1:
-		st.write(f"{name}!You have Diabetes") 
+		st.write("You have Diabetes") 
 	else:
-		st.write(f"{name}!No Diabetes") 
+		st.write("No Diabetes") 
 	
 	
