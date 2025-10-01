@@ -17,7 +17,11 @@ model.fit(x_train, y_train)
 
 #-------------------------streamlit code----
 st.title("Diabetes Prediction")
+st.image("a-doctor-writing-the-word-diabetes.jpg") 
 st.write("=" * 33)
+st.sidebar.title("Sample Patients Record ") 
+if st.sidebar.button("!!Click!!"):
+	st.sidebar.dataframe(data) 
 
 g = st.number_input("Enter Glucose label ==>")
 bp = st.number_input("Enter BloodPressure ==>")
@@ -28,7 +32,12 @@ dp = st.number_input("Enter DiabetesPedigreeFunction ==>")
 age = st.number_input("Enter age ==>")
 
 res = model.predict([[g, bp, sk, isu, bmi, dp, age]])
+t = res[0]
 
 if st.button("Predict Diabetes "):
-	st.write(f"you have {res}")
+	if t == 1:
+		st.write("You have Diabetes") 
+	else:
+		st.write("No Diabetes") 
+	
 	
