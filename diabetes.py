@@ -19,9 +19,10 @@ model.fit(x_train, y_train)
 st.title("Diabetes Prediction")
 st.image("a-doctor-writing-the-word-diabetes.jpg") 
 st.write("=" * 33)
-st.sidebar.title("Sample Patients Record ") 
+
 rad =st.sidebar.radio("Menu",["Sample Patients Records","Making Prediction","About Us"])
 if rad == "Sample Patients Records":
+	st.title("Sample Patients Record ") 
 	st.dataframe(data) 
 if rad == "Making Prediction":
 	c1, c2 = st.columns(2) 
@@ -52,6 +53,6 @@ if rad == "Making Prediction":
 		else:
 			st.write(f"{name}!No Diabetes") 
 if rad == "About Us":
-	st.write("Ashan Ali") 
+	st.header("Ashan Ali") 
 	
 	
